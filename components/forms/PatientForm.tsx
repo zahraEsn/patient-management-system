@@ -1,3 +1,5 @@
+"use client"
+
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -55,7 +57,7 @@ const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="space-y-4 mb-12">
-          <h1 className="text-32-bold md:text-36-bold">Hi there ...</h1>
+          <h1 className="header">Hi there ...</h1>
           <p className="text-dark-700">Get Started with Appointments.</p>
         </section>
         <CustomFormField
