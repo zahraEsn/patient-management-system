@@ -10,8 +10,8 @@ const Register = async ({ params }: SearchParamsProps) => {
 
   return (
     <div className="flex h-screen max-h-screen">
-      <section className="remove-scrollbar w-full px-[5%] sm:w-[65%] my-auto">
-        <div className="sub-container">
+      <section className="remove-scrollbar container">
+        <div className="sub-container max-w-[900px]">
           <Image
             src="/assets/icons/logo-full.svg"
             alt="logo"
@@ -22,17 +22,17 @@ const Register = async ({ params }: SearchParamsProps) => {
 
           <RegisterForm user={user} />
 
-          <div className="flex justify-between mt-20 text-14-regular">
-            <p className="justify-items-end text-dark-600 xl:text-left">
-              © carepulse copyright
-            </p>
-            <Link href="/?admin=true" className="text-green-500">
-              Admin
-            </Link>
-          </div>
+          <p className="copyright py-12">© carepulse copyright</p>
         </div>
       </section>
-      <div className="side-image hidden sm:block"></div>
+
+      <Image
+        src="/assets/images/register-img.png"
+        height={1000}
+        width={1000}
+        alt="patient"
+        className="side-img max-w-[390px]"
+      />
     </div>
   )
 }

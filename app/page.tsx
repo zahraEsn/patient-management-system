@@ -20,7 +20,7 @@ export default function Home() {
           <PatientForm />
 
           <div className="flex justify-between mt-20 text-14-regular">
-            <p className="justify-items-end text-dark-600 xl:text-left">
+            <p className="copyright">
               © carepulse copyright
             </p>
             <Link href="/?admin=true" className="text-green-500">
