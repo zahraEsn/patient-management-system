@@ -26,7 +26,9 @@ const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const form = useForm<z.infer<typeof PatientFormValidation>>({
+		// @ts-ignore
     resolver: zodResolver(PatientFormValidation),
+		// @ts-ignore
     defaultValues: {
       ...PatientFormDefaultValues,
       name: "",
