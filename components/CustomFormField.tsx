@@ -10,9 +10,8 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Control } from "react-hook-form"
-import { any } from "zod"
 import { FormFieldType } from "./forms/PatientForm"
-import React, { useState } from "react"
+import React from "react"
 import Image from "next/image"
 import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
@@ -21,7 +20,7 @@ import DatePicker from "react-datepicker"
 import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select"
 import { Textarea } from "./ui/textarea"
 import { Checkbox } from "./ui/checkbox"
-import { Label } from "@radix-ui/react-label"
+import { Controller } from "react-hook-form"
 
 interface CustomProps {
   control: Control<any>
@@ -136,18 +135,24 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
       )
     case FormFieldType.CHECKBOX:
       return (
-        <FormControl>
-          <div className="flex items-center gap-4">
-            <Checkbox
-              id={props.name}
-              checked={field.value}
-              onChange={field.onChange}
-            />
-            <label htmlFor={props.name} className="checkbox-label">
-              {props.label}
-            </label>
-          </div>
-        </FormControl>
+        <Controller
+          name={props.name}
+          control={props.control}
+          render={({ field }) => (
+            <FormControl>
+              <div className="flex items-center gap-4">
+                <Checkbox
+                  id={props.name}
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+                <label htmlFor={props.name} className="checkbox-label">
+                  {props.label}
+                </label>
+              </div>
+            </FormControl>
+          )}
+        />
       )
     default:
       break

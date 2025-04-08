@@ -4,10 +4,10 @@ import { ID, Query } from "node-appwrite"
 import {
   BUCKET_ID,
   database,
-  DATABASE_ID,
+  NEXT_PUBLIC_DATABASE_ID,
   NEXT_PUBLIC_ENDPOINT,
   NEXT_PUBLIC_PROJECT_ID,
-  PATIENT_COLLECTION_ID,
+  NEXT_PUBLIC_PATIENT_COLLECTION_ID,
   storage,
   users,
 } from "../appwrite.config"
@@ -44,6 +44,7 @@ export const getUser = async (userId: string) => {
 
 export const registerPatient = async ({
   identificationDocument,
+	userId,
   ...patient
 }: RegisterUserParams) => {
   try {
@@ -55,19 +56,25 @@ export const registerPatient = async ({
         identificationDocument?.get("fileName") as string
       )
 
-      file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile)
+      file = await storage.createFile(
+        process.env.BUCKET_ID!,
+        ID.unique(),
+        inputFile
+      )
     }
 
     const newPatient = await database.createDocument(
-      DATABASE_ID!,
-      PATIENT_COLLECTION_ID!,
+      process.env.NEXT_PUBLIC_DATABASE_ID!,
+      process.env.NEXT_PUBLIC_PATIENT_COLLECTION_ID!,
       ID.unique(),
       {
+				userId,
         identificationDocumentId: file?.$id || null,
-        identificationDocumentUrl: `${NEXT_PUBLIC_ENDPOINT}/storage/buckets/${BUCKET_ID}/files/${file?.$id}/view?project=${NEXT_PUBLIC_PROJECT_ID}`,
+        identificationDocumentUrl: `${process.env.NEXT_PUBLIC_ENDPOINT}/storage/buckets/${process.env.BUCKET_ID}/files/${file?.$id}/view?project=${process.env.NEXT_PUBLIC_PROJECT_ID}`,
         ...patient,
       }
     )
+    return newPatient
   } catch (error) {
     console.log(error)
   }
