@@ -19,9 +19,7 @@ export default function Home() {
           <PatientForm />
 
           <div className="flex justify-between mt-20 text-14-regular">
-            <p className="copyright">
-              © carepulse copyright
-            </p>
+            <p className="copyright">© carepulse copyright</p>
             <Link href="/?admin=true" className="text-green-500">
               Admin
             </Link>

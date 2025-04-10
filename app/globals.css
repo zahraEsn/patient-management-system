@@ -215,9 +215,11 @@ body {
     outline: none !important;
   }
 
-  .react-datepicker {
+  .react-datepicker,
+  .react-datepicker__time-box {
     background-color: var(--dark-400) !important;
     border-color: var(--dark-500) !important;
+    color: #ffffff !important;
   }
 
   .react-datepicker__header {
@@ -237,8 +239,15 @@ body {
   }
 
   .react-datepicker__day--selected,
-  .react-datepicker__day--keyboard-selected {
-    background-color: var(--green-400) !important;
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__time-list-item--selected {
+    background-color: #24ae7c !important;
+    color: #ffffff !important;
+  }
+  .react-datepicker__day:hover,
+  .react-datepicker__day--keyboard:hover,
+  .react-datepicker__time-list-item:hover {
+    background-color: #24ae7c !important;
     color: #ffffff !important;
   }
 }
@@ -371,8 +380,17 @@ body {
     @apply hidden h-full object-cover md:block;
   }
 
+  /* =====  SHADCN OVERRIDES */
   .shad-primary-btn {
     @apply bg-[var(--green-500)] text-white;
+  }
+
+  .shad-danger-btn {
+    @apply bg-[var(--red-700)] text-white;
+  }
+
+  .shad-gray-btn {
+    @apply border border-[var(--dark-500)] cursor-pointer bg-[var(--dark-400)] text-white;
   }
 
   .shad-select-trigger {
