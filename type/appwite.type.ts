@@ -14,7 +14,7 @@ export interface Patient extends Models.Document {
   primaryPhysician: string
   insuranceProvider: string
   insurancePolicyNumber: string
-  allergies: string | undefined
+  allergies?: string[]
   currentMedication: string | undefined
   familyMedicalHistory: string | undefined
   pastMedicalHistory: string | undefined
@@ -25,12 +25,12 @@ export interface Patient extends Models.Document {
 }
 
 export interface Appointment extends Models.Document {
-	patient: Patient;
-  schedule: Date;
-  status: Status;
-  primaryPhysician: string;
-  reason: string;
-  note: string;
-  userId: string;
-  cancellationReason: string | null;
+  patient: Patient
+  schedule: Date
+  status: Status
+  primaryPhysician: string
+  reason: string
+  note: string
+  userId: string
+  cancellationReason: string | null
 }

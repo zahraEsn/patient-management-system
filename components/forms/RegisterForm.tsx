@@ -59,10 +59,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         birthDate: new Date(values.birthDate),
         identificationDocument: formData,
       }
-      // @ts-ignore
       const patient = await registerPatient(patientData)
-      console.log("patient", patient)
-      // @ts-ignore
       if (patient) router.push(`/patients/${user.$id}/new-appointment`)
     } catch (error) {
       console.log(error)
@@ -223,7 +220,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.TEXTAREA}
             control={form.control}
             label="Allergies (if any)"
-            name="allergies"
+            name="	"
             placeholder="Peanuts, Penicillin, Pollen"
           />
           <CustomFormField

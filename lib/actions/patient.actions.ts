@@ -27,6 +27,7 @@ export const createUser = async (user: createUserParams) => {
   } catch (error: any) {
     if (error && error?.code === 409) {
       const document = await users.list([Query.equal("email", [user.email])])
+      console.log("error: ", error)
       return document?.users[0]
     }
     console.error("An error occurred while creating a new user:", error)
@@ -58,7 +59,7 @@ export const getPatient = async (userId: string) => {
   }
 }
 
-export const registerPatient = async ({	
+export const registerPatient = async ({
   identificationDocument,
   userId,
   ...patient

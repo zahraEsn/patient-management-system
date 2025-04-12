@@ -53,13 +53,39 @@ export const IdentificationTypes = [
   "Voter ID Card",
 ]
 
+// export const PatientFormDefaultValues = {
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+//   phone: "",
+//   birthDate: new Date(Date.now()),
+//   gender: "male" as Gender,
+//   address: "",
+//   occupation: "",
+//   emergencyContactName: "",
+//   emergencyContactNumber: "",
+//   primaryPhysician: "",
+//   insuranceProvider: "",
+//   insurancePolicyNumber: "",
+//   allergies: "",
+//   currentMedication: "",
+//   familyMedicalHistory: "",
+//   pastMedicalHistory: "",
+//   identificationType: "Birth Certificate",
+//   identificationNumber: "",
+//   identificationDocument: [],
+//   treatmentConsent: false,
+//   disclosureConsent: false,
+//   privacyConsent: false,
+// }
+
 export const PatientFormDefaultValues = {
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
   birthDate: new Date(Date.now()),
-  gender: "male" as Gender,
+  gender: "Male" as Gender,
   address: "",
   occupation: "",
   emergencyContactName: "",
@@ -77,4 +103,4 @@ export const PatientFormDefaultValues = {
   treatmentConsent: false,
   disclosureConsent: false,
   privacyConsent: false,
-}
+};
