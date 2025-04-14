@@ -1,15 +1,18 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Doctors } from "@/constants"
 import { getAppointment } from "@/lib/actions/appointment.actions"
 import { formatDateTime } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { useSearchParams, useParams } from "next/navigation"
 
-const Success = async ({
-  params: { userId },
-  searchParams,
-}: SearchParamsProps) => {
-  const appointmentId = (searchParams?.appointmentId as string) || ""
+const Success = async () => {
+  const params = useParams()
+  const searchParams = useSearchParams()
+  const userId = params.userId as string
+  const appointmentId = searchParams.get("appointmentId") || ""
   const appointment = await getAppointment(appointmentId)
   const doctor = Doctors.find(
     (doc) => doc.name === appointment.primaryPhysician

@@ -432,4 +432,15 @@ body {
   .request-details {
     @apply flex w-full flex-col items-center gap-8 border-y-2 border-[var(--dark-400)] py-8 md:w-fit md:flex-row;
   }
+  .shad-alert-dialog {
+    @apply space-y-5 bg-[var(--dark-400)] border-[var(--dark-500)] outline-none;
+  }
+
+  .shad-otp {
+    @apply w-full flex justify-between;
+  }
+
+  .shad-otp-slot {
+    @apply text-[36px] leading-[40px] font-bold justify-center flex border border-[var(--dark-500)] rounded-lg size-16 gap-4;
+  }
 }
