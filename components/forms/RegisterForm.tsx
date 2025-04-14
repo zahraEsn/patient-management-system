@@ -26,7 +26,7 @@ const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const form = useForm<z.infer<typeof PatientFormValidation>>({
-    // @ts-ignore
+		// @ts-ignore
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
       ...PatientFormDefaultValues,
@@ -59,6 +59,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         birthDate: new Date(values.birthDate),
         identificationDocument: formData,
       }
+			// @ts-ignore
       const patient = await registerPatient(patientData)
       if (patient) router.push(`/patients/${user.$id}/new-appointment`)
     } catch (error) {

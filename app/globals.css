@@ -165,7 +165,7 @@ body {
 
   .input-phone {
     margin-top: 0.5rem;
-    height: 3.35rem !important;
+    height: 2.75rem !important;
     border-radius: 0.375rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -394,8 +394,8 @@ body {
   }
 
   .shad-select-trigger {
-    @apply bg-[var(--dark-400)]  placeholder:text-[var(--dark-600)] border-[var(--dark-500)] focus:ring-0 focus:ring-offset-0;
-    height: 3.35rem !important;
+    @apply bg-[var(--dark-400)]  placeholder:text-[var(--dark-600)] border-[var(--dark-500)] focus:ring-0 focus:ring-offset-0 cursor-pointer;
+    height: 2.75rem !important;
   }
 
   .shad-select-content {
@@ -424,5 +424,12 @@ body {
 
   .copyright {
     @apply text-[14px] leading-[18px] font-normal justify-items-end text-center text-[var(--dark-600)] xl:text-left;
+  }
+
+  .success-img {
+    @apply m-auto flex flex-1 flex-col items-center justify-between gap-30 py-10;
+  }
+  .request-details {
+    @apply flex w-full flex-col items-center gap-8 border-y-2 border-[var(--dark-400)] py-8 md:w-fit md:flex-row;
   }
 }

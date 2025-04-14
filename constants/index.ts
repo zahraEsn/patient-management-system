@@ -1,3 +1,6 @@
+import { PatientFormValidation } from "@/lib/validation"
+import { z } from "zod"
+
 export const GenderOptions = ["male", "female", "other"]
 
 export const Doctors = [
@@ -79,9 +82,8 @@ export const IdentificationTypes = [
 //   privacyConsent: false,
 // }
 
-export const PatientFormDefaultValues = {
-  firstName: "",
-  lastName: "",
+export const PatientFormDefaultValues: z.infer<typeof PatientFormValidation> = {
+  name: "",
   email: "",
   phone: "",
   birthDate: new Date(Date.now()),
@@ -93,14 +95,14 @@ export const PatientFormDefaultValues = {
   primaryPhysician: "",
   insuranceProvider: "",
   insurancePolicyNumber: "",
-  allergies: "",
-  currentMedication: "",
-  familyMedicalHistory: "",
-  pastMedicalHistory: "",
+  allergies: undefined,
+  currentMedication: undefined,
+  familyMedicalHistory: undefined,
+  pastMedicalHistory: undefined,
   identificationType: "Birth Certificate",
-  identificationNumber: "",
-  identificationDocument: [],
+  identificationNumber: undefined,
+  identificationDocument: undefined,
   treatmentConsent: false,
   disclosureConsent: false,
   privacyConsent: false,
-};
+}
