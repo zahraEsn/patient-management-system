@@ -47,14 +47,11 @@ const AppointmentForm = ({
       case "cancel":
         status = "canceled"
         break
-      case "create":
-        status = "created"
-        break
       case "schedule":
         status = "scheduled"
         break
       default:
-        status = "pending"
+        status = "created"
     }
 
     try {
