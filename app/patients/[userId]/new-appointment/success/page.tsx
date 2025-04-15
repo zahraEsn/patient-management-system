@@ -5,12 +5,10 @@ import { formatDateTime } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 
-const Success = async ({
-  searchParams,
-  params: { userId },
-}: SearchParamsProps) => {
-  const appointmentId = (searchParams?.appointmentId as string) || ""
-  const appointment = await getAppointment(appointmentId)
+const Success = async ({ params, searchParams }: SearchParamsProps) => {
+  const { userId } = await params
+  const { appointmentId } = await searchParams
+  const appointment = await getAppointment(appointmentId as string | "")
   const doctor = Doctors.find(
     (doc) => doc.name === appointment.primaryPhysician
   )
@@ -35,8 +33,8 @@ const Success = async ({
             height={300}
           />
           <h2 className="header mb-6 max-w-[600px] text-center">
-            Your <span className="text-green-500">appointment request</span> has
-            been successfully submitted!
+            Your <span className="text-green-500">appointment request</span>
+            has been successfully submitted!
           </h2>
           <p>We'll be in touch shortly to confirm.</p>
           <section className="request-details">

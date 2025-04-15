@@ -56,32 +56,6 @@ export const IdentificationTypes = [
   "Voter ID Card",
 ]
 
-// export const PatientFormDefaultValues = {
-//   firstName: "",
-//   lastName: "",
-//   email: "",
-//   phone: "",
-//   birthDate: new Date(Date.now()),
-//   gender: "male" as Gender,
-//   address: "",
-//   occupation: "",
-//   emergencyContactName: "",
-//   emergencyContactNumber: "",
-//   primaryPhysician: "",
-//   insuranceProvider: "",
-//   insurancePolicyNumber: "",
-//   allergies: "",
-//   currentMedication: "",
-//   familyMedicalHistory: "",
-//   pastMedicalHistory: "",
-//   identificationType: "Birth Certificate",
-//   identificationNumber: "",
-//   identificationDocument: [],
-//   treatmentConsent: false,
-//   disclosureConsent: false,
-//   privacyConsent: false,
-// }
-
 export const PatientFormDefaultValues: z.infer<typeof PatientFormValidation> = {
   name: "",
   email: "",
@@ -105,4 +79,10 @@ export const PatientFormDefaultValues: z.infer<typeof PatientFormValidation> = {
   treatmentConsent: false,
   disclosureConsent: false,
   privacyConsent: false,
+}
+
+export const StatusIcon = {
+	scheduled: "/assets/icons/check.svg",
+	created: "/assets/icons/pending.svg",
+	canceled: "/assets/icons/cancelled.svg",
 }

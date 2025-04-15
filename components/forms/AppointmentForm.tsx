@@ -50,6 +50,8 @@ const AppointmentForm = ({
       case "schedule":
         status = "scheduled"
         break
+      case "create":
+        status = "created"
       default:
         status = "created"
     }

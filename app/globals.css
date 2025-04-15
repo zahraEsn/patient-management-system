@@ -458,4 +458,8 @@ body {
   .stat-card {
     @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-10 shadow-lg;
   }
+
+  .status-badge {
+    @apply flex items-center gap-2 rounded-full w-fit px-4 py-2;
+  }
 }
