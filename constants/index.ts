@@ -1,4 +1,5 @@
 import { PatientFormValidation } from "@/lib/validation"
+import { Gender } from "@/type"
 import { z } from "zod"
 
 export const GenderOptions = ["male", "female", "other"]

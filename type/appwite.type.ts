@@ -1,4 +1,5 @@
 import { Models } from "node-appwrite"
+import { Gender, Status } from "."
 
 export interface Patient extends Models.Document {
   userId: string
@@ -32,5 +33,5 @@ export interface Appointment extends Models.Document {
   reason: string
   note: string
   userId: string
-  cancellationReason: string | null
+  cancellationReason: string | undefined
 }

@@ -1,3 +1,5 @@
+import { Appointment } from "./appwite.type"
+
 declare type SearchParamsProps = {
   params: { [key: string]: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -47,4 +49,12 @@ declare type CreateAppointmentParams = {
   schedule: Date
   status: Status
   note: string | undefined
+}
+
+declare type UpdateAppointmentParams = {
+  userId: string
+  appointmentId: string
+  // timeZone: string
+  appointment: Appointment
+  type: string
 }

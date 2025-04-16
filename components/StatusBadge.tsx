@@ -1,4 +1,5 @@
 import { StatusIcon } from "@/constants"
+import { Status } from "@/type"
 import clsx from "clsx"
 import Image from "next/image"
 
