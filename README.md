@@ -27,6 +27,7 @@ npm run dev
 ## Usage
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+NEXT_PUBLIC_ADMIN_PASSKEY=123456
 
 ## Tech Stack
 

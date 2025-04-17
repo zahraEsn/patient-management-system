@@ -21,6 +21,7 @@ import { SelectItem } from "../ui/select"
 import Image from "next/image"
 import FileUploader from "../FileUploader"
 import SubmitButton from "../SubmitButton"
+import { User } from "@/type"
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter()
@@ -59,7 +60,6 @@ const RegisterForm = ({ user }: { user: User }) => {
         birthDate: new Date(values.birthDate),
         identificationDocument: formData,
       }
-			// @ts-ignore
       const patient = await registerPatient(patientData)
       if (patient) router.push(`/patients/${user.$id}/new-appointment`)
     } catch (error) {
